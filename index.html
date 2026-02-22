@@ -30,13 +30,13 @@
 <body class="w-11/12 mx-auto">
     <header class="mt-16">
         <h1 class="text-xl font-bold"> Job Application Tracker</h1>
-        <div class="summeryCards grid sm:grid-cols-3 gap-4 mt-5">
+        <div id="summeryCards" class=" grid sm:grid-cols-3 gap-4 mt-5">
 
             <!-- Total Summery -->
             <div class="card card-border bg-white shadow">
                 <div class="card-body">
                     <h2 class="card-title text-base font-normal">Total</h2>
-                    <p class="total text-xl font-bold">0</p>
+                    <p id="total" class="text-xl font-bold">0</p>
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
             <div class="card card-border bg-white shadow">
                 <div class="card-body">
                     <h2 class="card-title text-base font-normal">Interview</h2>
-                    <p class="total-interviewed text-xl font-bold text-green-600">0</p>
+                    <p id="total-interviewed" class=" text-xl font-bold text-green-600">0</p>
                 </div>
             </div>
 
@@ -70,20 +70,20 @@
                     <h2 class="font-medium text-xl">Available Jobs</h2>
                 </div>
                 <div>
-                    <p class="text-sm text-neutral-400">8 jobs</p>
+                    <p class="text-sm text-neutral-400"><span id="available-jobs">0</span> jobs</p>
                 </div>
             </div>
         </section>
         <!-- Filter Button -->
         <section class="mb-5">
-            <div class="filter-btn flex gap-2">
-                <button class="all-filter-btn btn font-normal px-8">All</button>
-                <button class="interview-filter-btn btn font-normal">Interview</button>
-                <button class="rejected-filter-btn btn font-normal">Rejected</button>
+            <div id="filter-btn" class=" flex gap-2">
+                <button id="all-filter-btn" class="btn font-normal px-8">All</button>
+                <button id="interview-filter-btn" class=" btn font-normal">Interview</button>
+                <button id="rejected-filter-btn" class=" btn font-normal">Rejected</button>
             </div>
         </section>
         <!-- Empty Job -->
-        <section id="no-job">
+        <section id="no-job" class="hidden">
             <div class="bg-white p-28 shadow rounded-md flex flex-col justify-center items-center text-center gap-2">
                 <div><img src="./jobs.png" alt="no job found"></div>
                 <div>
@@ -94,9 +94,9 @@
             </div>
         </section>
         <!-- Job Listing -->
-        <section id="job-list" class="space-y-5 hidden">
+        <section id="job-list" class="space-y-5 ">
             <!-- Job Post 1 -->
-            <div class="card bg-base-100 shadow-sm ">
+            <div class="kisy card bg-base-100 shadow-sm ">
                 <div class="flex justify-around">
                     <div class="card-body">
                         <h2 class="job-title text-lg font-semibold">
@@ -109,17 +109,17 @@
                         <div class="current-status w-max py-2 px-4 rounded-md uppercase bg-blue-50">
                             Not Applied
                         </div>
+                        <div class="job-status"></div>
                         <p class="job-description">Build cross-platform mobile applications using React Native. Work on
                             products
                             used by millions of users worldwide.</p>
                         <div class="card-actions">
                             <div class="interview-btn btn btn-success btn-outline uppercase">interview</div>
-                            <div class="struggle-btn btn btn-error btn-outline uppercase">rejected</div>
+                            <div class="rejected-btn btn btn-error btn-outline uppercase">rejected</div>
                         </div>
                     </div>
                     <div class="p-5">
-                        <button id="delete"
-                            class="border h-8 w-8 border-neutral-300 rounded-full text-neutral-400 hover:text-error"><i
+                        <button class="delete  text-neutral-400 hover:text-error"><i
                                 class="far fa-trash-alt"></i></button>
                     </div>
                 </div>
@@ -140,16 +140,16 @@
                         <div class="current-status w-max py-2 px-4 rounded-md uppercase bg-blue-50">
                             Not Applied
                         </div>
+                        <div class="job-status"></div>
                         <p class="job-description">Create stunning web experiences for high-profile clients. Must have
                             portfolio and experience with modern web design trends.</p>
                         <div class="card-actions">
                             <div class="interview-btn btn btn-success btn-outline uppercase">interview</div>
-                            <div class="struggle-btn btn btn-error btn-outline uppercase">rejected</div>
+                            <div class="rejected-btn btn btn-error btn-outline uppercase">rejected</div>
                         </div>
                     </div>
                     <div class="p-5">
-                        <button id="delete"
-                            class="border h-8 w-8 border-neutral-300 rounded-full text-neutral-400 hover:text-error"><i
+                        <button class="delete  text-neutral-400 hover:text-error"><i
                                 class="far fa-trash-alt"></i></button>
                     </div>
                 </div>
@@ -169,17 +169,17 @@
                         <div class="current-status w-max py-2 px-4 rounded-md uppercase bg-blue-50">
                             Not Applied
                         </div>
+                        <div class="job-status"></div>
                         <p class="job-description">Transform complex data into compelling visualizations. Required
                             skills: D3.js, React, and strong analytical thinking.
                         </p>
                         <div class="card-actions">
                             <div class="interview-btn btn btn-success btn-outline uppercase">interview</div>
-                            <div class="struggle-btn btn btn-error btn-outline uppercase">rejected</div>
+                            <div class="rejected-btn btn btn-error btn-outline uppercase">rejected</div>
                         </div>
                     </div>
                     <div class="p-5">
-                        <button id="delete"
-                            class="border h-8 w-8 border-neutral-300 rounded-full text-neutral-400 hover:text-error"><i
+                        <button class="delete  text-neutral-400 hover:text-error"><i
                                 class="far fa-trash-alt"></i></button>
                     </div>
                 </div>
@@ -199,16 +199,16 @@
                         <div class="current-status w-max py-2 px-4 rounded-md uppercase bg-blue-50">
                             Not Applied
                         </div>
+                        <div class="job-status"></div>
                         <p class="job-description">Design and maintain scalable backend systems using Python and AWS.
                             Work with modern DevOps practices and cloud infrastructure.</p>
                         <div class="card-actions">
                             <div class="interview-btn btn btn-success btn-outline uppercase">interview</div>
-                            <div class="struggle-btn btn btn-error btn-outline uppercase">rejected</div>
+                            <div class="rejected-btn btn btn-error btn-outline uppercase">rejected</div>
                         </div>
                     </div>
                     <div class="p-5">
-                        <button id="delete"
-                            class="border h-8 w-8 border-neutral-300 rounded-full text-neutral-400 hover:text-error"><i
+                        <button class="delete  text-neutral-400 hover:text-error"><i
                                 class="far fa-trash-alt"></i></button>
                     </div>
                 </div>
@@ -228,16 +228,16 @@
                         <div class="current-status w-max py-2 px-4 rounded-md uppercase bg-blue-50">
                             Not Applied
                         </div>
+                        <div class="job-status"></div>
                         <p class="job-description">Create beautiful and functional user interfaces for our suite of
                             products. Strong design skills and frontend development expertise required.</p>
                         <div class="card-actions">
                             <div class="interview-btn btn btn-success btn-outline uppercase">interview</div>
-                            <div class="struggle-btn btn btn-error btn-outline uppercase">rejected</div>
+                            <div class="rejected-btn btn btn-error btn-outline uppercase">rejected</div>
                         </div>
                     </div>
                     <div class="p-5">
-                        <button id="delete"
-                            class="border h-8 w-8 border-neutral-300 rounded-full text-neutral-400 hover:text-error"><i
+                        <button class="delete  text-neutral-400 hover:text-error"><i
                                 class="far fa-trash-alt"></i></button>
                     </div>
                 </div>
@@ -257,17 +257,17 @@
                         <div class="current-status w-max py-2 px-4 rounded-md uppercase bg-blue-50">
                             Not Applied
                         </div>
+                        <div class="job-status"></div>
                         <p class="job-description">Build enterprise applications with JavaScript and modern frameworks.
                             We offer competitive compensation, health insurance, and professional development
                             opportunities.</p>
                         <div class="card-actions">
                             <div class="interview-btn btn btn-success btn-outline uppercase">interview</div>
-                            <div class="struggle-btn btn btn-error btn-outline uppercase">rejected</div>
+                            <div class="rejected-btn btn btn-error btn-outline uppercase">rejected</div>
                         </div>
                     </div>
                     <div class="p-5">
-                        <button id="delete"
-                            class="border h-8 w-8 border-neutral-300 rounded-full text-neutral-400 hover:text-error"><i
+                        <button class="delete  text-neutral-400 hover:text-error"><i
                                 class="far fa-trash-alt"></i></button>
                     </div>
                 </div>
@@ -287,16 +287,16 @@
                         <div class="current-status w-max py-2 px-4 rounded-md uppercase bg-blue-50">
                             Not Applied
                         </div>
+                        <div class="job-status"></div>
                         <p class="job-description">Join our fast-growing startup and work on our core platform.
                             Experience with Node.js and React required. Great benefits and equity package included.</p>
                         <div class="card-actions">
                             <div class="interview-btn btn btn-success btn-outline uppercase">interview</div>
-                            <div class="struggle-btn btn btn-error btn-outline uppercase">rejected</div>
+                            <div class="rejected-btn btn btn-error btn-outline uppercase">rejected</div>
                         </div>
                     </div>
                     <div class="p-5">
-                        <button id="delete"
-                            class="border h-8 w-8 border-neutral-300 rounded-full text-neutral-400 hover:text-error"><i
+                        <button class="delete  text-neutral-400 hover:text-error"><i
                                 class="far fa-trash-alt"></i></button>
                     </div>
                 </div>
@@ -317,17 +317,17 @@
                         <div class="current-status w-max py-2 px-4 rounded-md uppercase bg-blue-50">
                             Not Applied
                         </div>
+                        <div class="job-status"></div>
                         <p class="job-description">We are looking for an experienced Frontend Developer to build
                             scalable web applications using React and TypeScript. You will work with a talented team on
                             cutting-edge projects.</p>
                         <div class="card-actions">
                             <div class="interview-btn btn btn-success btn-outline uppercase">interview</div>
-                            <div class="struggle-btn btn btn-error btn-outline uppercase">rejected</div>
+                            <div class="rejected-btn btn btn-error btn-outline uppercase">rejected</div>
                         </div>
                     </div>
                     <div class="p-5">
-                        <button id="delete"
-                            class="border h-8 w-8 border-neutral-300 rounded-full text-neutral-400 hover:text-error"><i
+                        <button class="delete  text-neutral-400 hover:text-error"><i
                                 class="far fa-trash-alt"></i></button>
                     </div>
                 </div>
