@@ -77,9 +77,12 @@
         <!-- Filter Button -->
         <section class="mb-5">
             <div id="filter-btn" class=" flex gap-2">
-                <button id="all-filter-btn" class="btn font-normal px-8">All</button>
-                <button id="interview-filter-btn" class=" btn font-normal">Interview</button>
-                <button id="rejected-filter-btn" class=" btn font-normal">Rejected</button>
+                <button onclick="toggleFilter('all-filter-btn')" id="all-filter-btn"
+                    class="bg-blue-500 text-white btn font-normal px-8">All</button>
+                <button onclick="toggleFilter('interview-filter-btn')" id="interview-filter-btn"
+                    class=" btn font-normal">Interview</button>
+                <button onclick="toggleFilter('rejected-filter-btn')" id="rejected-filter-btn"
+                    class=" btn font-normal">Rejected</button>
             </div>
         </section>
         <!-- Empty Job -->
