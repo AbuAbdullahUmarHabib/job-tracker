@@ -8,6 +8,7 @@ const interviewFilterBtn = document.getElementById("interview-filter-btn");
 const rejectedFilterBtn = document.getElementById("rejected-filter-btn");
 
 const jobList = document.getElementById("job-list");
+const filterJobs = document.getElementById("filter-jobs");
 
 let interviewCount = [];
 let rejectedCount = [];
@@ -42,6 +43,7 @@ for (int of interviewBtn) {
       newChild.classList.add("btn-success", "btn", "btn-outline");
       jobStatus.appendChild(newChild);
       currentStats.classList.add("hidden");
+      interviewCount.push(jobCard);
     }
   });
 }
@@ -81,3 +83,17 @@ function toggleFilter(id) {
   selected.classList.remove("bg-white-500", "text-black");
   selected.classList.add("bg-blue-500", "text-white");
 }
+interviewFilterBtn.addEventListener("click", function () {
+  jobList.classList.add("hidden");
+
+  interviewCount.forEach((element) => {
+    filterJobs.append(element);
+  });
+});
+
+allFilterBtn.addEventListener("click", function () {
+  jobList.classList.remove("hidden");
+});
+rejectedFilterBtn.addEventListener("click", function () {
+  jobList.classList.remove("hidden");
+});
